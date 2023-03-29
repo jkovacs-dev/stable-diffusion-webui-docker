@@ -6,11 +6,11 @@ SHELL ["/bin/bash", "-ceuxo", "pipefail"]
 
 ENV DEBIAN_FRONTEND=noninteractive PIP_PREFER_BINARY=1
 
-RUN --mount=type=cache,target=/root/.cache/pip pip install torch==1.13.0 torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu117
+RUN --mount=type=cache,target=/root/.cache/pip pip install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu118
 
 RUN apt-get update && apt install fonts-dejavu-core rsync git jq moreutils -y && apt-get clean
 
-ARG BRANCH=master SHA=ee46bef03a98903831c01d31094a0c30ea411b28
+ARG BRANCH=master SHA=b2554bc4dd69c3f5ad965edbc5585c4ff4948458
 RUN --mount=type=cache,target=/root/.cache/pip <<EOF
 git config --global http.postBuffer 1048576000
 git clone https://github.com/comfyanonymous/ComfyUI.git stable-diffusion
