@@ -20,6 +20,7 @@ MOUNTS["${ROOT}/models/t2i_adapter"]="/data/comfy/t2i_adapter"
 MOUNTS["${ROOT}/models/upscale_models/RealESRGAN"]="/data/RealESRGAN"
 MOUNTS["${ROOT}/models/upscale_models/SwinIR"]="/data/SwinIR"
 MOUNTS["${ROOT}/models/upscale_models/GFPGAN"]="/data/GFPGAN"
+MOUNTS["${ROOT}/models/upscale_models/ESRGAN"]="/data/ESRGAN"
 MOUNTS["${ROOT}/models/vae"]="/data/VAE"
 
 MOUNTS["${ROOT}/output"]="/output/comfy"
