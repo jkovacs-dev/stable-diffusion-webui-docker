@@ -12,7 +12,7 @@ x-base_service: &base_service
         reservations:
           devices:
               - driver: nvidia
-                device_ids: ['0']
+                device_ids: ['1']
                 capabilities: [gpu]
 
 name: webui-docker
@@ -30,7 +30,7 @@ services:
     build: ./services/AUTOMATIC1111
     image: sd-auto:49
     environment:
-      - CLI_ARGS=--allow-code --medvram --xformers --enable-insecure-extension-access --api
+      - CLI_ARGS=--allow-code --medvram --xformers --enable-insecure-extension-access --api --no-half
 
   auto-cpu:
     <<: *automatic
@@ -70,4 +70,4 @@ services:
     build: ./services/comfy/
     image: sd-comfy:1
     environment:
-      - CLI_ARGS=
+      - CLI_ARGS=--disable-xformers --highvram

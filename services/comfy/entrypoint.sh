@@ -21,6 +21,7 @@ MOUNTS["${ROOT}/models/upscale_models/RealESRGAN"]="/data/RealESRGAN"
 MOUNTS["${ROOT}/models/upscale_models/SwinIR"]="/data/SwinIR"
 MOUNTS["${ROOT}/models/upscale_models/GFPGAN"]="/data/GFPGAN"
 MOUNTS["${ROOT}/models/vae"]="/data/VAE"
+MOUNTS["${ROOT}/custom_nodes"]="/data/comfy/custom_nodes"
 
 MOUNTS["${ROOT}/output"]="/output/comfy"
 
