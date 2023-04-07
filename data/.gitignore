@@ -20,4 +20,9 @@
 /VAE
 /embeddings
 /Lora
+<<<<<<< HEAD
 /comfy
+=======
+/ControlNet
+/openpose
+>>>>>>> upstream/master

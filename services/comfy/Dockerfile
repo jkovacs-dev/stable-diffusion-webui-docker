@@ -10,7 +10,7 @@ RUN --mount=type=cache,target=/root/.cache/pip pip install torch==1.13.0 torchvi
 
 RUN apt-get update && apt install fonts-dejavu-core rsync git jq moreutils -y && apt-get clean
 
-ARG BRANCH=master SHA=ee46bef03a98903831c01d31094a0c30ea411b28
+ARG BRANCH=master SHA=07e9a6b8266326c5f51ea7b0cc20c6129bf5d238
 RUN --mount=type=cache,target=/root/.cache/pip <<EOF
 git config --global http.postBuffer 1048576000
 git clone https://github.com/comfyanonymous/ComfyUI.git stable-diffusion
