@@ -6,11 +6,11 @@ SHELL ["/bin/bash", "-ceuxo", "pipefail"]
 
 ENV DEBIAN_FRONTEND=noninteractive PIP_PREFER_BINARY=1
 
-RUN --mount=type=cache,target=/root/.cache/pip pip install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu118
+RUN --mount=type=cache,target=/root/.cache/pip pip install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu118 xformers
 
 RUN apt-get update && apt install fonts-dejavu-core rsync git jq moreutils -y && apt-get clean
 
-ARG BRANCH=master SHA=b2554bc4dd69c3f5ad965edbc5585c4ff4948458
+ARG BRANCH=master SHA=f5f701388bcc5e026f7bb9bf1c9c896c39fca47e
 RUN --mount=type=cache,target=/root/.cache/pip <<EOF
 git config --global http.postBuffer 1048576000
 git clone https://github.com/comfyanonymous/ComfyUI.git stable-diffusion
@@ -19,8 +19,6 @@ git checkout ${BRANCH}
 git reset --hard ${SHA}
 pip install -r requirements.txt
 EOF
-
-RUN --mount=type=cache,target=/root/.cache/pip pip install -U 'transformers>=4.24'
 
 # add info
 COPY . /docker/
